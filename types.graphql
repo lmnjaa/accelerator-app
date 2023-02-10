@@ -1,0 +1,36 @@
+type Query {
+  pizzaSales(
+    startDate: String
+    endDate: String
+    pizza: [String]
+    period: Int
+  ): PizzaSales
+  ingredientCost(
+    startDate: String
+    endDate: String
+    pizza: [String]
+    period: Int
+  ): IngredientCost
+}
+
+type PizzaSales {
+  totalSales: Int
+  salesByWeek: [SalesByWeek]
+}
+
+type SalesByWeek {
+  startDate: String
+  endDate: String
+  sales: Int
+}
+
+type IngredientCost {
+  totalCost: Int
+  costByWeek: [CostByWeek]
+}
+
+type CostByWeek {
+  startDate: String
+  endDate: String
+  cost: Int
+}
